@@ -229,8 +229,7 @@ section {
 
 .project_wrapper:hover .project_description {
   opacity: 1;
-  transform: translateY(100%);
-  opacity: 0;
+  transform: translateY(-50%);
   transition: opacity 300ms, transform 450ms ease;
   color: white;
   max-width: 550px;
@@ -240,13 +239,14 @@ section {
   position: absolute;
   top: 50%;
   left: 90px;
-  transform: translateY(-50%);
+  transform: translateY(100%);
   color: white;
   max-width: 550px;
 }
 
 .project_wrapper:hover .project_wrapper--background {
   opacity: 0.7;
+  color: #1c1d25;
 }
 
 .project_wrapper_background {
@@ -256,6 +256,7 @@ section {
   width: 100%;
   height: 100%;
   background-color: #1c1d25;
+  color: white;
   opacity: 0.7;
 }
 
