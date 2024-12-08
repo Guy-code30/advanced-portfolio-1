@@ -9,6 +9,17 @@
       src="https://kit.fontawesome.com/2fd3bd8951.js"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "qqO96IaXJEb0zuHc9",
+      });
+   })();
+</script>
   </head>
   <body>
     <section id="landing-page">
@@ -47,50 +58,124 @@
           </li>
         </ul>
       </nav>
-    </section>
-    <header class="header">
-      <div class="header_content">
-        <div class="title_wrapper">
-          <h1 class="title">Hey,</h1>
-          <h1 class="title title--secondary">I'm Samuel.</h1>
+      <header class="header">
+        <div class="header_content">
+          <div class="title_wrapper">
+            <h1 class="title">Hey,</h1>
+            <h1 class="title title--secondary">I'm Samuel.</h1>
+          </div>
+          <p class="header_para">
+            I'm a <b class="style_text"> Frontend Software Engineer</b> with a
+            strong passion for building web applications with great user
+            experiences. Here's a bit more
+            <b class="style_text">about me.</b>
+          </p>
+          <div class="social_list">
+            <a
+              href="https://www.linkedin.com/in/samuel-ellis-2087a52b8/"
+              target="_blank"
+              class="social_link click"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/Guy-code30"
+              target="_blank"
+              class="social_link click"
+            >
+              <i class="fa-brands fa-square-github"></i>
+            </a>
+            <a
+              href="./assets/Sam resume (6).pdf"
+              target="_blank"
+              class="social_link click"
+            >
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+          </div>
         </div>
-        <p class="header_para">
-          I'm a <b class="style_text"> Frontend Software Engineer</b> with a
-          strong passion for building web applications with great user
-          experiences. Here's a bit more
-          <b class="style_text">about me.</b>
-        </p>
-        <div class="social_list">
-          <a
-            href="https://www.linkedin.com/in/samuel-ellis-2087a52b8/"
-            target="_blank"
-            class="social_link click"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a
-            href="https://github.com/Guy-code30"
-            target="_blank"
-            class="social_link click"
-          >
-            <i class="fa-brands fa-square-github"></i>
-          </a>
-          <a
-            href="./assets/Sam resume (6).pdf"
-            target="_blank"
-            class="social_link click"
-          >
-            <i class="fa-solid fa-file-pdf"></i>
-          </a>
+      </header>
+      <button class="mail_btn click">
+        <i class="fa-solid fa-envelope"></i>
+      </button>
+      <a href="" class="scroll">
+        <div class="scroll_icon click"></div>
+      </a>
+      <div class="modal">
+        <div class="modal_half modal_about">
+          <h3 class="modal_title modal_title--about">Heres a bit about me.</h3>
+          <h4 class="modal_sub-title modal_sub-title--about">
+            Frontend Software Engineer.
+          </h4>
+          <p class="modal_para">
+            I'm a 21 year-old American <b class="style_text">Frontend Software Engineer</b> with
+            passions for <b class="style_text">developing website</b> for a great user experience.
+            <br />
+            I'm currently working on extremely <b class="style_text">difficult engineering</b> projects
+            and currently learning under the guidance of <b class="style_text">high</b> level, <b class="style_text">talented</b>
+            and <b class="style_text">experienced</b> software engineers.
+          </p>
+          <div class="modal_languages">
+            <figure class="modal_language">
+              <img
+                class="modal_language--img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                alt=""
+              />
+              <span class="language_name">HTML</span>
+            </figure>
+            <figure class="modal_language">
+              <img
+                class="modal_language--img"
+                src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
+                alt=""
+              />
+              <span class="language_name">CSS</span>
+            </figure>
+            <figure class="modal_language">
+              <img
+                class="modal_language--img"
+                src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
+                alt=""
+              />
+              <span class="language_name">JavaScript</span>
+            </figure>
+          </div>
         </div>
+        <div class="modal_half modal_contact">
+            <h3 class="modal_title modal_title--contact">
+                Let's have a chat!
+            </h3>
+            <h3 class="modal_sub-title modal_sub-title--contact">
+                I'm currently open for new opportunities.
+            </h3>
+            <form id="contact_form" onsubmit="contact(event)">
+                <div class="form_item">
+                    <label class="form_item--label">Name</label>
+                    <input class="input" name="user_name" type="text" required></input>
+                </div>
+                <div class="form_item">
+                    <label class="form_item--label">Email</label>
+                    <input class="input" name="user_email" type="email" required></input>
+                </div>
+                <div class="form_item">
+                    <label class="form_item--label">Message</label>
+                    <textarea class="input" name="message" type="text" required></textarea>
+                </div>
+                <button id="contact_submit" class="form_submit">
+                    Send it my way
+                </button>
+            </form>
+            <div class="modal_overlay modal_everlay--loading">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="modal_overlay modal_overlay--success">
+                Thanks for the message! Looking forwared to speaking to you soon.
+            </div>
+        </div>
+        <i class="fas fa-times modal_exit click"></i>
       </div>
-    </header>
-    <button class="mail_btn click">
-      <i class="fa-solid fa-envelope"></i>
-    </button>
-    <a href="" class="scroll">
-      <div class="scroll_icon click"></div>
-    </a>
+    </section>
     <section id="#Projects">
       <div class="container">
         <div class="row">
@@ -237,7 +322,11 @@
       <div class="container">
         <div class="row footer_row">
           <figure>
-            <img class="footer_logo--img" src="./assets/Orange SE logo.jpeg" alt="" />
+            <img
+              class="footer_logo--img"
+              src="./assets/Orange SE logo.jpeg"
+              alt=""
+            />
           </figure>
           <div class="footer_social--list">
             <a
