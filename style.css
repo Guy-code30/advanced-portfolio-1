@@ -407,6 +407,10 @@ section {
   padding: 28px;
 }
 
+.modal_overlay--visible {
+  z-index: 1;
+}
+
 .fa-spinner {
   animation: spinner 750ms infinite;
   font-size: 40px;
