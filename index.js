@@ -1,3 +1,14 @@
+let contrastToggle = false;
+function toggleContrast() {
+    contrastToggle = !contrastToggle;
+  if (contrastToggle) {
+    document.body.classList = +" dark-theme";
+  }
+  else {
+    document.body.classList.remove("dark-theme")
+  }
+}
+
 function contact(event) {
   event.preventDefault();
   const loading = document.querySelector(".modal_overlay--loading");
@@ -24,10 +35,12 @@ function contact(event) {
 
 let isModalOpen = false;
 function toggleModal() {
-    isModalOpen = !isModalOpen;
-    if (isModalOpen) {
-        return document.body.classList.remove("modal--open");
-    }
-    // toggle modal 
-    document.body.classList += " modal--open"
+  isModalOpen = !isModalOpen;
+  if (isModalOpen) {
+    isModalOpen = false;
+    return document.body.classList.remove("modal--open");
+  }
+  // toggle modal
+  isModalOpen = true;
+  document.body.classList += " modal--open";
 }

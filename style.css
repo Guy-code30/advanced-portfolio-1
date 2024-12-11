@@ -170,6 +170,20 @@ nav {
   font-size: 20px;
 }
 
+.dark-theme .title,
+.dark-theme .section_title,
+.dark-theme .section_sub-title,
+.dark-theme .nav_link--anchor,
+.dark-theme .fa-circle-half-stroke,
+.dark-theme .header_para 
+{
+  color: white;
+}
+
+.dark-theme section {
+  background-color: #242424;
+}
+
 /* LANDING PAGE */
 
 #landing-page {

@@ -42,14 +42,14 @@
               >Projects</a
             >
           </li>
-          <li class="nav_link">
+          <li class="nav_link" onclick="toggleModal()">
             <a
               href="#"
               class="nav_link--anchor link_hover-effect link_hover-effect--black"
               >Contact</a
             >
           </li>
-          <li class="nav_link click">
+          <li class="nav_link click" onclick="toggleContrast()">
             <a
               href="#"
               class="nav_link--anchor link_hover-effect link_hover-effect--black"
@@ -67,8 +67,8 @@
           <p class="header_para">
             I'm a <b class="style_text"> Frontend Software Engineer</b> with a
             strong passion for building web applications with great user
-            experiences. Here's a bit more
-            <b class="style_text">about me.</b>
+            experiences. Here's a bit more 
+            <b class="style_text click" onclick="toggleModal()">about me.</b>
           </p>
           <div class="social_list">
             <a
@@ -143,7 +143,7 @@
           </div>
         </div>
         <div class="modal_half modal_contact">
-            <i class="fas fa-times modal_exit click"></i>
+            <i class="fas fa-times modal_exit click" onclick="toggleModal()"></i>
             <h3 class="modal_title modal_title--contact">
                 Let's have a chat!
             </h3>
