@@ -28,7 +28,8 @@ section {
   background-color: rgb(245, 245, 245);
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   background-color: #242424;
   color: white;
@@ -52,11 +53,13 @@ label {
   font-weight: bold;
 }
 
-input:hover, textarea:hover {
+input:hover,
+textarea:hover {
   border-color: #dcdfe6;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   border-color: rgb(255, 149, 0);
 }
 
@@ -111,6 +114,22 @@ input:focus, textarea:focus {
 
 .link_hover-effect--black::after {
   color: #242424;
+}
+
+nav,
+.scroll,
+.header {
+  opacity: 1;
+  visibility: visible;
+  transition: all 600ms;
+}
+
+.modal--open nav,
+.modal--open .scroll,
+.modal--open.header {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 400ms;
 }
 
 /* NAVIGATION */
@@ -279,6 +298,15 @@ section {
   border-radius: 20px;
   overflow: hidden;
   display: flex;
+  visibility: hidden;
+  z-index: -1;
+  transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
+}
+
+.modal--open .modal {
+  z-index: 60;
+  box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+  visibility: visible;
 }
 
 .modal_half {
@@ -288,16 +316,21 @@ section {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  transition: all 300ms ease;
-  position: relative;
+  transition: all 300ms ease-in;
+}
+
+.modal--open .modal_about, 
+.modal--open .modal_contact {
+  transform: translateX(0%);
 }
 
 .modal_about {
   background-color: rgb(245, 245, 245);
-  padding: 40px 72px;
+  transform: translateX(-110%);
+  /* padding: 40px 72px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .modal_languages {
@@ -341,6 +374,7 @@ section {
 .modal_contact {
   background-color: #242424;
   color: white;
+  transform: translateX(110%);
 }
 
 .modal_title {
@@ -388,7 +422,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   z-index: -1;
@@ -409,6 +443,7 @@ section {
 
 .modal_overlay--visible {
   z-index: 1;
+  display: flex;
 }
 
 .fa-spinner {
@@ -521,7 +556,6 @@ section {
 
 /* FOOTER */
 
-
 footer {
   background-color: #242424;
   display: flex;
@@ -544,11 +578,10 @@ footer {
   max-width: 500px;
   display: flex;
   justify-content: space-around;
-  margin: 20px ;
+  margin: 20px;
 }
 
 .footer_social--link,
 .footer_copyright {
   color: white;
 }
-
